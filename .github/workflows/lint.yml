@@ -1,0 +1,15 @@
+name: Lint
+on: [push, pull_request]
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install tools
+        run: sudo apt-get update && sudo apt-get install -y clang-format cppcheck
+      - name: Format check
+        run: |
+          find src include -regex '.*\.(c|h)$' -print0 | xargs -0 clang-format -style=file -n
+      - name: Cppcheck
+        run: |
+          cppcheck --enable=warning,style,performance,portability --error-exitcode=1 src include
