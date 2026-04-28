@@ -70,8 +70,6 @@ This project is not finished yet. Communication with the DS2484 and DS1825U is w
 - TI driverlib for F280025C.
 
 
-This project is not finished yet. Communication with the DS2484 and DS1825U is working, but the **final step of decoding the temperature value is still incorrect**. Expect wrong or unstable readings until this part is fixed.
-
 ---
 
 
